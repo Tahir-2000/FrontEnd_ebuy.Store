@@ -1,0 +1,34 @@
+const mongoose = require('mongoose');
+
+
+const productSchema = new mongoose.productSchema({
+       name: String,
+   price: {
+	type: Number},
+   pOldPrice:{
+        type:Number,
+    },
+    pCetegory:{
+            type:String,
+            required:[true,"Please select cetegory"]       
+        },
+    pImagePath:{
+            type:String,
+            required:[true,"Please Upload image"]    
+        },
+    pStock:{
+        type:Number,
+        required:[true,"Please enter number of units"]
+    },
+    pOnSale:{
+        type:String,
+    }
+})
+
+module.exports = mongoose.model('Product', productSchema)
+
+    });
+
+   
+    module.exports = Product;
+     
