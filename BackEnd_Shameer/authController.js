@@ -157,3 +157,37 @@ console.log(user)
     createSendToken(res,user,200);
 
  })
+
+exports.allOrders = catchAsync(async(req,res,next)=>{
+    const userID = req.body.ID;
+    const currentUser = req.user;
+    console.log('this is current user',currentUser)
+    let users;
+    if(userID === undefined || userID === "" || userID === " "){
+        users = await User.find().populate({
+            path:'orderedProducts',
+            select:'-__v -password -confirmPassword  -passwordResetToken -passwordResetExpires'
+        })}else if( userID !== undefined && userID !== "" && userID !== " "){
+            if(userID === 'LoggedInUser'){
+                users = await User.find( {_id: currentUser._id} ).populate({
+                    path:'orderedProducts',
+                    select:'-__v -password -confirmPassword  -passwordResetToken -passwordResetExpires'
+            })
+            }else{
+            users = await User.find( {_id:userID} ).populate({
+                path:'orderedProducts',
+                select:'-__v -password -confirmPassword  -passwordResetToken -passwordResetExpires'
+                 })
+            }
+       }
+  console.log(users)
+     if(!users){
+         return new AppError('cannot get any order',204)
+     }
+     res.status(201).json({
+         status:'success',
+         currentUser,
+         users
+        
+     })
+ })
