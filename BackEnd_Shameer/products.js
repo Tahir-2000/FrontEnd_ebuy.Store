@@ -52,3 +52,13 @@ exports.editProducts = catchAsync(async(req,res,next)=>{
     })
     
 });
+exports.showProducts = catchAsync(async(req,res,next)=>{
+
+    let products = await Product.find(req.body).sort([['pTitle',1]]);
+    if(!products){
+        return (new AppError('can not get the products ' , 500))
+    }
+
+   
+    sendResponce(res,products,200)
+});
