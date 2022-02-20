@@ -1,1 +1,1 @@
-Super-Store-Frontend
+eBuy.store_code
