@@ -21,7 +21,7 @@ function useAddProductFunc(){
                 pPrice: e.target.pPrice.value,
                 pStock : e.target.pStock.value,
                 pOnSale: e.target.pOnSale.value,
-                pEdible: e.target.pEdible.value,
+                
                 pImagePath:e.target.pURL.value,
                 pDescription:e.target.pDescription.value,
                 pOldPrice:e.target.pOldPrice.value
