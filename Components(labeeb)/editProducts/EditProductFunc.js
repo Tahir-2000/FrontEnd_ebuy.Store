@@ -21,7 +21,7 @@ console.log( e.target.pOldPrice.value)
                 pPrice: e.target.pPrice.value === "" || e.target.pPrice.value === null ? undefined : e.target.pPrice.value,
                 pStock : e.target.pStock.value === "" || e.target.pStock.value === null ? undefined : e.target.pStock.value,
                 pOnSale: e.target.pOnSale.value ,// we do not apply condition becauze we want to update it according to either it is " " or "onSale"
-                pEdible: e.target.pEdible.value ,// we do not apply condition becauze we want to update it according to either it is " " or "edible"
+               
                 pImagePath: e.target.pURL.value  === " " || e.target.pURL.value  === null ? undefined : e.target.pURL.value,// if we don not put
                 //this condition here before sending data it will send imagePath as " " bcz pURL.value have " " string data as we set by URL state
                 pDescription: e.target.pDescription.value === "" || e.target.pDescription.value === null? undefined : e.target.pDescription.value,
