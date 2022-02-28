@@ -12,41 +12,20 @@ function AddProducts (){
 	const [userLoggedIn,setUserLoggedIn] = useContext(UserContext)
 	const [image, setImage]= useState(null);
 	const [sale, setSale]= useState(' ');
-	const [edible, setEdible]= useState(' ');
+	
 	const [URL, setURL] = useState(' ');
 	const [cetegoryValue, setCetegoryValue] = useState(1)
-	const edibleCetegories = [
-		{ key: 1, value: "Chips" },
-		{ key: 2, value: "Chocolate" },
-		{ key: 3, value: "Biscuit" },
-		{ key: 4, value: "Juice" },
-		{ key: 5, value: "Cold Drink" },
-		{ key: 6, value: "Cooking Ghee" },
-		{ key: 7, value: "Cooking Oil" },
-		{ key: 8, value: "Recipe Masalah" },
-		{ key: 9, value: "Spice" },
-		{ key: 10, value: "Herb" },
-		{ key: 11, value: "Grain" },
-		{ key: 12, value: "Souce" },
-		{ key: 13, value: "Kachup" },
-		{ key: 14, value: "Rice" },
 	
+	const cetegories = [
+		{ key: 1, value: "electronicFan" },
+		{ key: 2, value: "tv" },
+		{ key: 3, value: "ectricHeater" },
+		{ key: 4, value: "grinder" },
+		{ key: 5, value: "oven" },
+		{ key: 6, value: "fridge" },
 	]
-	const nonEdibleCetegories =[
-		{ key: 1, value: "Stationary" },
-		{ key: 2, value: "Beuty & Beuty" },
-		{ key: 3, value: "Perfume" },
-		{ key: 4, value: "Soap" },
-		{ key: 5, value: "Detergent" },
-		{ key: 6, value: "Surface Cleaner" },
-		{ key: 7, value: "Bathroom Cleaner" },
-		{ key: 8, value: "Tissue" },
-		{ key: 9, value: "Insect Killer" },
-		{ key: 10, value: "Electronic" },
-		{ key: 11, value: "Face Mask" },
-		{ key: 12, value: "Baby Pamper" },
-		{ key: 13, value: "Adult Pamper" }
-	]
+	
+	
 	const useAddProductFuncCall = useAddProductFunc();
 
 	const onCetegoryChange = (event) => {
@@ -65,13 +44,7 @@ function AddProducts (){
 	}
 
 	}
-	const edibleChangeLisner =()=>{
-	if(edible === ' '){
-		setEdible('edible');
-	}else{
-		setEdible(' ');
-	}
-}
+	
 	const handleChange = (e) => {
 
 		 if (e.target.files[0]) {
@@ -134,24 +107,16 @@ function AddProducts (){
 								fontSize: '20px',padding: 'none ',marginBottom:'3px !important',marginTop:'7px !important' , overflow:'scroll'}}
 								name="pCetegory" onChange={onCetegoryChange} value={cetegoryValue}>
 								
-								{edible === 'edible'?
-									edibleCetegories.map(item => (
+								
+									cetegories.map(item => (
 										<option style={{overflow:'scroll !important'}}key={item.key} value={item.value}>{item.value} </option>
 									))
-								:
-									nonEdibleCetegories.map(item => (
-										<option style={{overflow:'scroll !important'}}key={item.key} value={item.value}>{item.value} </option>
-									))
-								}
-
+								
 								</select>
 							</div>
 
 							<div style={{paddingTop:'9px',paddingBottom:'0px'}}className="form-group login-group-checkbox "  >                 
-							
-								<input type="checkbox" className="" name="pEdible"  onChange={edibleChangeLisner} id='Edible' value={edible} />
-								<label for="Edible" >Edible </label>
-							
+
 								<input  type="checkbox" className="" name="pOnSale" onChange={saleChangeLisner} id="Sale"  value={sale}/>
 								<label for="Sale">On Sale</label>
 						
