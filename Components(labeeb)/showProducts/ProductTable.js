@@ -11,7 +11,7 @@ function ProductTable (props){
           <td style={{maxWidth:'120px',color:'black', fontWeight:'bold'}}>{product.pTitle}</td>
           <td>{product.pDescription}</td>
           <td >{product.pPrice}</td>
-          <td className="toNonDisplay">{product.pEdible}</td>
+         
           <td className="toNonDisplay">{product.pCetegory}</td>
           <td>{product.pStock}</td>
           <td>{product.pOnSale}</td>
@@ -31,7 +31,7 @@ function ProductTable (props){
               <th style={{maxWidth:'80px'}}>Title</th>
               <th>Description</th>
               <th >Price</th>
-              <th className="toNonDisplay">Edible</th>
+
               <th className="toNonDisplay">Cetegory</th>
               <th>Stock</th>
               <th>On Sale</th>  
