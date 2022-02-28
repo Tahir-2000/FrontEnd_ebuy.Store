@@ -12,7 +12,7 @@ function EditProducts(){
 	const Location = useLocation();
     const [image, setImage]= useState(null);
 	const [sale, setSale]= useState(' ');
-	const [edible, setEdible]= useState(' ');//its initial value is ' ' empty string not '' which null value not string so '' will be set to undefined in EditProducFun.js
+
 	const [URL, setURL] = useState(' ');
 	const [cetegoryValue, setCetegoryValue] = useState(" ")
 	const [ID, setID] = useState('');
@@ -28,48 +28,18 @@ function EditProducts(){
 		setDescription(Location.state.product.pDescription)
 		setCetegoryValue(Location.state.product.pCetegory)
 		setPrice(Location.state.product.pPrice);
-		setEdible(Location.state.product.pEdible);
+
 		setSale(Location.state.product.pOnSale);
-		setOldPrice(Location.state.product.pOldPrice)
-		if(Location.state.product.pEdible === 'edible'){
-			document.getElementById('Edible').checked ='true'
-		}if(Location.state.product.pOnSale === 'onSale'){
-			document.getElementById('Sale').checked ='true'
-		}
-		
+		setOldPrice(Location.state.product.pOldPrice)		
 	}
 	}, [])
-    const edibleCetegories = [
-		{ key: 1, value: "Chips" },
-		{ key: 2, value: "Chocolate" },
-		{ key: 3, value: "Biscuit" },
-		{ key: 4, value: "Juice" },
-		{ key: 5, value: "Cold Drink" },
-		{ key: 6, value: "Cooking Ghee" },
-		{ key: 7, value: "Cooking Oil" },
-		{ key: 8, value: "Recipe Masalah" },
-		{ key: 9, value: "Spice" },
-		{ key: 10, value: "Herb" },
-		{ key: 11, value: "Grain" },
-		{ key: 12, value: "Souce" },
-		{ key: 13, value: "Kachup" },
-		{ key: 14, value: "Rice" },
-	
-	]
-	const nonEdibleCetegories =[
-		{ key: 1, value: "Stationary" },
-		{ key: 2, value: "Beuty & Beuty" },
-		{ key: 3, value: "Perfume" },
-		{ key: 4, value: "Soap" },
-		{ key: 5, value: "Detergent" },
-		{ key: 6, value: "Surface Cleaner" },
-		{ key: 7, value: "Bathroom Cleaner" },
-		{ key: 8, value: "Tissue" },
-		{ key: 9, value: "Insect Killer" },
-		{ key: 10, value: "Electronic" },
-		{ key: 11, value: "Face Mask" },
-		{ key: 12, value: "Baby Pamper" },
-		{ key: 13, value: "Adult Pamper" }
+    const cetegories = [
+		{ key: 1, value: "electronicFan" },
+		{ key: 2, value: "tv" },
+		{ key: 3, value: "ectricHeater" },
+		{ key: 4, value: "grinder" },
+		{ key: 5, value: "oven" },
+		{ key: 6, value: "fridge" },
 	]
 	const useEditProductFuncCall = useEditProductFunc();
 
@@ -102,12 +72,7 @@ function EditProducts(){
 	}
 
 	}
-	const edibleChangeLisner =()=>{
-	if(edible === ' '){
-		setEdible('edible');
-	}else{
-		setEdible(' ');
-	}
+	
 }
 	const handleChange = (e) => {
 
@@ -171,15 +136,11 @@ function EditProducts(){
 								fontSize: '20px',padding: 'none ',marginBottom:'3px !important',marginTop:'7px !important',overflow:'scroll'}}
 								name="pCetegory" onChange={onCetegoryChange} value={cetegoryValue}>
 								
-								{edible === 'edible'?
-									edibleCetegories.map(item => (
+								
+									cetegories.map(item => (
 										<option style={{overflow:'scroll !important'}}key={item.key} value={item.value}>{item.value} </option>
 									))
-								:
-									nonEdibleCetegories.map(item => (
-										<option style={{overflow:'scroll !important'}}key={item.key} value={item.value}>{item.value} </option>
-									))
-								}
+								
 
 								</select>
 							</div>
