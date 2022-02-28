@@ -14,7 +14,7 @@ router.post('/addProduct',authController.protect ,
 productController.addProduct
 );
 
-router.post('/showProducts',authController.protect , 
+router.get('/showProducts',authController.protect , 
 (req,res,next)=>{
     if(req.user.role === 'admin'){
         next();
