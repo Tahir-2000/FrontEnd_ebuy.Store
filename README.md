@@ -9,4 +9,4 @@ For front_end:
   7: Now runn the following command to run the application
   => npm run start
 
-<----------------your app is running on available local port -------------->
+<----------------Front_End is running on available local port -------------->
