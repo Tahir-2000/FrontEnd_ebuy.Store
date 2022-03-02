@@ -6,7 +6,7 @@ For front_end:
   5: Now open front_End folder in your IDE and open its terminal.
   6: Run the following command to install all required packages.
   => npm install
-  7: Now runn the following command to run the application
+  7: Now run the following command to run the application
   => npm run start
 
 <----------------Front_End is running on available local port -------------->
