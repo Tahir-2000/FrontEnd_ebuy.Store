@@ -13,9 +13,9 @@ For front-End:
 
 For Back-End:
   1: Download the back-end code and open it in any IDE after its extraction. (Recommended IDE: Visual Studio Code)
-  2: Setup development envoirement for backend explained in following steps.
+  2: Setup development environment for backend explained in following steps.
   3: Download and install node(includes npm package manager).
-  4: If envoiremental variables are not automatically set after node installation than set it by own(must check auto path setting while node installation).
+  4: If environment variables are not automatically set after node installation than set it by own(must check auto path setting while node installation).
   5: Now open back-end folder in your IDE and open its terminal.
   6: Run the following command to install all required packages.
   => npm install
