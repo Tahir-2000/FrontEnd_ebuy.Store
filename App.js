@@ -17,8 +17,8 @@ import SignUp from "./Components(labeeb)/signUp/SignUp";
 import Cart from "./Components(labeeb)/shoopingCart/Cart";
 import ShowMore from './Components(labeeb)/Home/filterBar/utilits/ShowMoreCetegories';
 import CetegoryProducts from './Components(labeeb)/Home/filterBar/CetegoryProducts';
-import {ProviderFunc} from './Components/cartContext/cartContext';
-import {UserProviderFunc } from './Components/userContext/UserContext';
+import {ProviderFunc} from './Components(labeeb)/cartContext/cartContext';
+import {UserProviderFunc } from './Components(labeeb)/userContext/UserContext';
 import AllProducts from './Components(labeeb)/allProducts/allProducts';
 
 
