@@ -19,4 +19,5 @@ For Back-End:
   4: Now run the following command to run the application
   => npm run start
 
+=> Now Backend is running on available local port.
 
