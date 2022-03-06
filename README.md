@@ -13,7 +13,7 @@ You will have to restart any currently-opened command prompts *Visual Studio Cod
 
 # **Development setup**
 - Download the code and open it in any IDE after its extraction. *visual studio        code recommended as IDE.
-- Download and install Node.js from http://nodejs.org/download/(Make sure that npm package manager is also installed after the node.js installation is completed).
+- Download and install Node.js from http://nodejs.org/download/ (Make sure that npm package manager is also installed after the node.js installation is completed).
 - If system environmental variables are not automatically set after node installation than set it by own(must check auto path option while node installation).
 
 **For Back-End Server:**
