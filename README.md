@@ -13,7 +13,7 @@ For front-End:
 
 For Back-End:
   1: If you already performed above steps 1-4,then proceed to step 2,else first perform above steps 1-4 and then proceed to step 2.
-  2: Now open Shameer(BackEnd) folder in your IDE and open its terminal.
+  2: Now open Backend(Shameer) folder in your IDE and open its terminal.
   3: Run the following command to install all required packages.
   => npm install
   4: Now run the following command to run the application
