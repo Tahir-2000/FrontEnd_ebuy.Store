@@ -3,33 +3,25 @@ import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import {BrowserRouter as Router , Route,Switch } from "react-router-dom";
-import ChangePassword from './Components/Admin/changePassword/ChangePassword'
-import NavbarAdmin from "./Components/Navbar/NavbarAdmin";
-import Sale from "./Components/Sale/Sale";
-import Home from "./Components/Home/Home";
-import About from "./Components/About/about";
-import Signin  from "./Components/Admin/signIn/SignIn";
+import ChangePassword from './Components(labeeb)/changePassword/ChangePassword'
+import NavbarAdmin from "./Components(labeeb)/Navbar/NavbarAdmin";
+import Sale from "./Components(labeeb)/Sale/Sale";
+import Home from "./Components(labeeb)/Home/Home";
+import Signin  from "./Components(labeeb)/signIn/SignIn";
 import Forget  from "./Components/Admin/forgetPassword/ForgetPassword";
-import AddProducts  from "./Components/Admin/addProducts/AddProducts";
-import ShowProducts from "./Components/Admin/manageProducts/ShowProducts";
-import EditProducts from "./Components/Admin/manageProducts/EditProducts";
-import ChangeUserName   from "./Components/Admin/changeUserName/ChangeUserName";
-import SignUp from "./Components/Admin/signUp/SignUp";
-import Cart from "./Components/shoopingCart/Cart";
-import ShowMore from './Components/Home/filterBar/utilits/ShowMoreCetegories';
-import CetegoryProducts from './Components/Home/filterBar/CetegoryProducts';
-import ShippingAddressPage from './Components/shipping/shippingAddress';
-import BuyNow from './Components/buyNow/BuyNow';
-import {ProviderFunc} from './Components/cartContext/cartContext';
-import {UserProviderFunc } from './Components/userContext/UserContext';
-import Orders from './Components/Admin/showOrders/ShowOrders';
-import UserOrderDetails from './Components/Admin/showOrders/UserOrderDetails';
-import PendingOrder from './Components/pendingOrder/PendingOrder.js'
-import AllProducts from './Components/allProducts/allProducts';
-import MyAccount from './Components/myAccountInfo/MyAccount'
+import AddProducts  from "./Components(labeeb)/addProducts/AddProducts";
+import ShowProducts from "./Components(labeeb)/manageProducts/ShowProducts";
+import EditProducts from "./Components(labeeb)/manageProducts/EditProducts";
+import ChangeUserName   from "./Components(labeeb)/changeUserName/ChangeUserName";
+import SignUp from "./Components(labeeb)/signUp/SignUp";
+import Cart from "./Components(labeeb)/shoopingCart/Cart";
+import ShowMore from './Components(labeeb)/Home/filterBar/utilits/ShowMoreCetegories';
+import CetegoryProducts from './Components(labeeb)/Home/filterBar/CetegoryProducts';
+import {ProviderFunc} from './Components(labeeb)/cartContext/cartContext';
+import {UserProviderFunc } from './Components(labeeb)/userContext/UserContext';
+import AllProducts from './Components(labeeb)/allProducts/allProducts';
 
 
-	
 function App() {
 
   return (
@@ -48,16 +40,7 @@ function App() {
       <Route path = "/signUp" exact>
         <SignUp/>
       </Route>
-   
-        <Route path = "/shippingPage" exact>
-        <NavbarAdmin/>
-        <ShippingAddressPage/>
-        </Route>
-        <Route path = "/BuyNow" exact>
-        <NavbarAdmin/>
-        <BuyNow/>
-        </Route>
-          
+
       <Route path = "/Allproducts" exact>
       <NavbarAdmin/>
         <AllProducts/>
@@ -69,15 +52,7 @@ function App() {
       <NavbarAdmin/>
         <Cart/>
         </Route>
-        <Route path = "/PendingOrder" exact>
-          <NavbarAdmin/>
-        <PendingOrder/>
-        </Route>
-        <Route path = "/MyAccount" exact>
-          <NavbarAdmin/>
-          <MyAccount/>
-        </Route>
-      
+
         <Route path = "/ChangeUserName" exact>
         <NavbarAdmin/>
         <ChangeUserName/>
@@ -94,10 +69,7 @@ function App() {
       <NavbarAdmin/>
         <Sale/>
       </Route>
-      <Route path = "/about" exact>
-      <NavbarAdmin/>
-          <About/>
-      </Route> 
+
       {/* routing component with sending data as props in it from <Link/> */}
       <Route path="/CetegoryProducts"  >
       <NavbarAdmin/>
@@ -110,14 +82,7 @@ function App() {
       <Route path = "/ChangePassword/:resetToken" >
         <ChangePassword/>
       </Route>
-        <Route path = "/Orders" exact>
-        <NavbarAdmin/>
-        <Orders/>
-        </Route>
-        <Route path = "/userOrderDetails" exact>
-        <NavbarAdmin/>
-        <UserOrderDetails/>
-        </Route>         
+       
       <Route path = "/ShowProducts" exact>
       <NavbarAdmin/>
         <ShowProducts/>
