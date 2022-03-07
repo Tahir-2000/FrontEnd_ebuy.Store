@@ -108,7 +108,7 @@ exports.forgotPassword = catchAsync(async(req, res, next) => {
         }
         let transporter = nodemailer.createTransport(nodemailMailgun(auth));
         const mailOptions = {
-            from: 'onlinegrocerymart.store@gmail.com',
+            from: 'eBuy.store@gmail.com',
             to: user.email,
             subject: 'Your password reset token "only valid for 10 minutes"',
             text: message
