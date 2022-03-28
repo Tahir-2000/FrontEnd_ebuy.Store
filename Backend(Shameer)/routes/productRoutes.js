@@ -8,11 +8,11 @@ router.patch('/editProducts', authController.protect, authController.restrictTo(
 router.get('/showProducts', authController.protect, authController.restrictTo('admin'), productController.showProducts);
 router.delete('/:productId', authController.protect, authController.restrictTo('admin'), productController.deleteProducts);
 
-router.get('/ShowMore', productController.showMoreCategories);
-router.get('/getProducts', productController.getProducts);
-router.get('/getSaleProducts', productController.getSaleProducts);
-router.get('/getCetegoryProducts', productController.getCategoryProducts);
-router.get('/:productId', productController.getOneProduct);
+router.post('/ShowMore', productController.showMoreCategories);
+router.post('/getProducts', productController.getProducts);
+router.post('/getSaleProducts', productController.getSaleProducts);
+router.post('/getCetegoryProducts', productController.getCategoryProducts);
+router.post('/:productId', productController.getOneProduct);
 
 
 module.exports = router;
