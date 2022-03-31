@@ -26,7 +26,7 @@ You will have to restart any currently-opened command prompts *Visual Studio Cod
 <----------------Back-End is running on available local port -------------->
 
 **For front-End Server:**
-  - Now open Components(labeeb) folder in your IDE and open its terminal.
+  - Now open Frontend(Labeeb) folder in your IDE and open its terminal.
   - Run the following command in the terminal to install all required packages.
   - **npm install**
   - Now run the following command in the terminal to run the application
