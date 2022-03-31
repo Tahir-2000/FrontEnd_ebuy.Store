@@ -82,7 +82,7 @@ return(
 						</div>
 					</div>
 					<div className='  row'>
-						<div className="col-12" className='form-group '><textarea style={{width:'100%'}} className="form-control"type='text'name="address" placeholder="Shipping Address" style={{fontSize:'16x'}} required='true' /> </div>
+						<div className="col-12 form-group" ><textarea style={{width:'100%' , fontSize:'16x'}} className="form-control"type='text'name="address" placeholder="Shipping Address"  required='true' /> </div>
 					</div>	
 					<div className='  row'>
 						<div className="col-sm-6 col-12 form-group" >
