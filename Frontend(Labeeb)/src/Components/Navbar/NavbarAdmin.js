@@ -15,7 +15,8 @@ import { UserContext } from "../userContext/UserContext";
 
 
 function MyNavbar(){
-    const [User,setUser] = useState({})
+    const [User,setUser] = useState({});
+    const [cartCookie,setCartCookie] = useCookies(['cart']);
     const [cookie,setCookie] = useCookies(['jwt']);
     const history = useHistory();
     const [cartItem , setCartItem] = useContext(CartContext)
@@ -43,8 +44,9 @@ function MyNavbar(){
            
           }catch(err){
             if(err.response){
-              if(err.response.data.message == 'jwt expired'){//check if jwt is expired it navbar will not load bcz jwt is send when ever it is loaded and backend will send jwt expired error so catch it and logout to login page
+              if(err.response.data.message == 'jwt expired' || err.response.data.message == 'jwt malformed' ){//check if jwt is expired it navbar will not load bcz jwt is send when ever it is loaded and backend will send jwt expired error so catch it and logout to login page
                 setCookie('jwt',cookie, { path:'/' , expires : new Date(Date.now()) }); 
+                setCookie('cart',[], { path:'/' , expires : new Date(Date.now()) });
                     setCartItem([])
                     setUserLoggedIn([])
                     console.log('loggedout succesfully');
@@ -65,6 +67,7 @@ function MyNavbar(){
     function useSignOut(){ 
         try{
                     setCookie('jwt',cookie, { path:'/' , expires : new Date(Date.now()) }); 
+                    setCookie('cart',cartCookie, { path:'/' , expires : new Date(Date.now()) }); 
                     setCartItem([])
                     setUserLoggedIn([])
                     console.log('loggedout succesfully');

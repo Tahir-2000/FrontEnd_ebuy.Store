@@ -24,13 +24,14 @@ function BuyNow(props){
     const [totalPrice , setTotalPrice] = useState(0);
     const [shippingFee, setShippingFee] = useState();
     const [ previousTotal, setPreviousTotal] = useState(0)
-
+    const [cartCookie, setCartCookie] = useCookies(['cart']);  
+    
     const submit = useBuyNow(location.state,previousTotal , totalPrice , shippingFee);
  
     useEffect(async() => {
-      if(location.state){
+      if(location.state){ // if user have clicked for checkout directly from hame note from cart
      
-        cartItemsRequestFunc(location.state)
+        cartItemsRequestFunc(location.state)// for single product
         setCartDisplay(true)
       }else{
         cartItemsRequestFunc(cartItem);
@@ -101,13 +102,15 @@ function BuyNow(props){
             }
     }
 }
+
 const removeItem = (productId) => {
     const index=  cartItem.indexOf(productId);
     let arrayItems = [...cartItem];//hard copying array so to implement splice() on it 
    arrayItems.splice(index,1)
-   setCartItem(arrayItems); // setting cartItem to spliced array
-            
+   setCartCookie('cart', arrayItems, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });  
+   setCartItem(arrayItems); // setting cartItem to spliced array       
  }
+
  const cartProdcutsHeader = <div  className="row " style={{color:'white',paddingTop:'8px', paddingBottom:'0px',backgroundColor:'rgb(0, 191, 255)', display:'flex-inline' , justifyContent:'center',alignContent:'center'}}>
                               <div className='col-6' style={{ display:'flex',justifyContent:'start'}}>
                                 <p><span style={{color:'black'}}>{count}</span> ITEM(s)</p>

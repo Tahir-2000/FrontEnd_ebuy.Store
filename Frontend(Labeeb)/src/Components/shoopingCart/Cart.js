@@ -5,7 +5,8 @@ import CartTable from "./cartTableJSX";
 import {useCookies} from "react-cookie";
 import Axios from 'axios';
 import './cartJSX.css';
-import {Link,useHistory} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom';
+
 
  function Cart(){
    const history = useHistory();
@@ -13,9 +14,10 @@ import {Link,useHistory} from 'react-router-dom'
     const [cartItem,setCartItem] = useContext(CartContext);
     const [products , setProducts] = useState([]);
     const [totalPrice , setTotalPrice] = useState(0)
+    const [cartCookie, setCartCookie] = useCookies(['cart']);   
 
     useEffect(() => {
-    
+    console.log("this cartCookie"+ cartCookie.cart)
     getProducts(cartItem)
     }, [cartItem])// must put cartItem state in here bcz it will re call useEffect when ever this state change 
     //so by this getProducts call on each time according to changed cartItem global state which is essential to call bcz when we remove product and 
@@ -47,9 +49,10 @@ import {Link,useHistory} from 'react-router-dom'
     const removeFromCart = (productId) => {
      const index=  cartItem.indexOf(productId);
      let arrayItems = [...cartItem];//hard copying array so to implement splice() on it 
-    arrayItems.splice(index,1)
+    arrayItems.splice(index,1);
+    setCartCookie('cart', arrayItems, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });  
     setCartItem(arrayItems); // setting cartItem to spliced array
-             
+          
   }
   const totalPriceHandler =(totalPrice)=>{
     setTotalPrice(totalPrice)
