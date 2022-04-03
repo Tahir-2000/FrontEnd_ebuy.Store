@@ -75,7 +75,7 @@ return(
 				<div className="login-group row">
 				    <div className='row'>
 						<div className="form-group col-12 col-sm-6">
-							<input type="text" className="form-control"  name="name" placeholder="Full Name" style={{fontSize:'18px'}} required='true'/>
+							<input type="text" pattern="^[A-Za-z \s*]+$" title ="Alphabets Only" className="form-control"  name="name" placeholder="Full Name" style={{fontSize:'18px'}} required='true'/>
 						</div>
 						<div className="form-group col-12 col-sm-6">
 							<input type="number" className="form-control"  name="number" placeholder="Contact Number" style={{fontSize:'18x'}} required='true'/>
