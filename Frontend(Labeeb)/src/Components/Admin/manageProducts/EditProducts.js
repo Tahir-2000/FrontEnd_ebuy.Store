@@ -175,7 +175,7 @@ function EditProducts(){
 							</div>
 							
 							<div className=" rounded form-group  ">
-							<input  style={{marginBottom:'8px'}} onChange={handleChange} className="pic" type="file" />
+							<input  style={{marginBottom:'8px'}} onChange={handleChange} className="pic" type="file" accept = "image/*" />
 							</div>
 							
 						
