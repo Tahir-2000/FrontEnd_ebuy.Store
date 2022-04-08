@@ -131,7 +131,7 @@ function AddProducts (){
 							</div>
 							
 							<div className=" rounded form-group  ">
-							<input  style={{marginBottom:'8px'}} onChange={handleChange} className="pic" type="file" required='true'/>
+							<input  style={{marginBottom:'8px'}} onChange={handleChange} className="pic" type="file" accept = "image/*" required='true'/>
 							</div>
 							
 							{image?
