@@ -122,12 +122,7 @@ function MyNavbar(){
                              </Link>
                            </li>
                            
-                           <li className="nav-item">
-                             <Link className="nav-link " to="/EditProducts">
-                             <i className="fa fa-edit"></i>
-                                 Edit Products
-                             </Link>
-                           </li>
+                         
                          </ul>
                      
                            <ul className="navbar-nav  " style={{marginLeft:'10px ',padding:'0px', marginTop:'0px',marginRight:'17px '}} >
