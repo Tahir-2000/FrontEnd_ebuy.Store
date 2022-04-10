@@ -31,7 +31,7 @@ function filterBar(){
                 <Link to={{ pathname: "/CetegoryProducts", state:'Gyser'}}>       
                     <div className=' col-2'style={{ marginLeft:'0px',marginRight:'7px' ,display:'inline-block'}}>
                         <img style={{width:'60px',height:'60px',padding:'0px',margin:'0px',borderRadius:'50%'}} src='https://static-01.daraz.pk/p/8d57fae56890d449821ae97675a4a2ab.jpg' alt='stationary'/> 
-                        <caption style={{fontSize:'12px',paddingLeft:'1px',margin:'0px'}}>#Instant Gyser</caption> 
+                        <caption style={{fontSize:'12px',paddingLeft:'1px',margin:'0px'}}>#Instant Geyser</caption> 
                     </div>
                     </Link> 
                 <Link to={{ pathname: "/CetegoryProducts", state:'Oven'}}>       
