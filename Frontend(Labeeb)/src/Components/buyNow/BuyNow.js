@@ -162,7 +162,7 @@ const hideShippingDetailsFunc=()=>{
             <div className='row ' id='addressCartFooter' style={{display:'flex',position:'relative' , justifyContent:'space-between'}} >  
                  <div className='col-12 col-md-7 myCart ' style={{display:'flex',flexDirection:'column'}}>
                   {!location.state && cartItem.length === 0?
-                     history.push('/Home')
+                     history.push('/')
                   :
                   <div style={{marginBottom:'80px'}}>
                   {cartProdcutsHeader}
@@ -235,10 +235,10 @@ const hideShippingDetailsFunc=()=>{
               <div className='container-fluid' id='goToHome' style={{position:'fixed', display:'flex',left:'0px',alignContent:'center',top:'30%',display:'none',textAlign:'center'}}>
                               <div onClick={()=>{
                                 if(!location.state)setCartItem([]);
-                                history.push({pathname:'./Home'})}
+                                history.push({pathname:'/'})}
                               }  className='container goToHome' >
                               <h1>Order Submitted</h1>
-                              <Link to='/Home' style={{color:'red' }}><h6>Click To Continue Shopping!</h6></Link>
+                              <Link to='/' style={{color:'red' }}><h6>Click To Continue Shopping!</h6></Link>
                               </div>
               </div> 
         </div>

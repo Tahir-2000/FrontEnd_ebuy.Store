@@ -11,7 +11,7 @@ function  SignUp(){
     return(
 <>
 {cookie.jwt?
-history.push({pathname:'/Home'})
+history.push({pathname:'/'})
 :
 <div className="text-center" style={{padding:'50px'  }}>
 	<div className="logo" style={{color:'#F57224'}}>Sign Up</div>
@@ -39,7 +39,7 @@ history.push({pathname:'/Home'})
 				<button type="submit" onSubmit={signUp} className="login-button"><i className="fa fa-chevron-right"></i></button>
 			</div>
 			<div className="etc-login-form">
-				<p>Already have a account? <Link  style={{color:'red'}} to="/">Log In</Link></p>
+				<p>Already have a account? <Link  style={{color:'red'}} to="/signIn">Log In</Link></p>
 			</div>
 		</form>
 	</div>	

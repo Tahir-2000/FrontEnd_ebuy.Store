@@ -6,45 +6,45 @@ import {Link} from "react-router-dom";
 import {useCookies} from "react-cookie";
 
 function CardProducts (props){
-    const [cartCookie, setCartCookie] = useCookies(['cart']);   
-    const [cartItem , setCartItem] = useContext(CartContext);
-    let id =[] ;
+//     const [cartCookie, setCartCookie] = useCookies(['cart']);   
+//     const [cartItem , setCartItem] = useContext(CartContext);
+//     let id =[] ;
 
-    // useEffect(() => { // will run every time cart item changed either on refresh on on add to cart click to set crt items from cookie so cart items data didnot loose
-    //     if(typeof(cartCookie.cart) !== "undefined" ){
-    //         setCartItem([...cartCookie.cart]);
-    //     }else{
-    //         setCartItem([]);
-    //     }
+//     // useEffect(() => { // will run every time cart item changed either on refresh on on add to cart click to set crt items from cookie so cart items data didnot loose
+//     //     if(typeof(cartCookie.cart) !== "undefined" ){
+//     //         setCartItem([...cartCookie.cart]);
+//     //     }else{
+//     //         setCartItem([]);
+//     //     }
        
-    //   }, [cartItem]);
+//     //   }, [cartItem]);
     
-    const addToCartHandler=(pID)=>{
-        console.log("this is product id" + pID);
-        if(typeof(cartCookie.cart) !== "undefined" ){ // this is to set cart items into cart cookie to not to loose cart items on refresh
-            id= [...cartCookie.cart,pID];
-            setCartCookie('cart', id , { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });
-            console.log(cartCookie.cart);
-        }else{
-            id = [];
-            setCartCookie('cart', [...id ,pID ], { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });
-            console.log(cartCookie.cart);
-        }
+//     const addToCartHandler=(pID)=>{
+//         console.log("this is product id" + pID);
+//         if(typeof(cartCookie.cart) !== "undefined" ){ // this is to set cart items into cart cookie to not to loose cart items on refresh
+//             id= [...cartCookie.cart,pID];
+//             setCartCookie('cart', id , { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });
+//             console.log(cartCookie.cart);
+//         }else{
+//             id = [];
+//             setCartCookie('cart', [...id ,pID ], { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });
+//             console.log(cartCookie.cart);
+//         }
         
    
-        // console.log(pID);
-        if(cartItem === {}){//if cart is empty array then set id into it
-            setCartItem(pID);
-            // setCartCookie('cart',pID, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });  
-            // console.log(cartCookie);
- //NOTE: must initialize cartItem as array so then we can use ...cartItem else if it is object then error of cartItem is not iterable occur
-        }else{   
-            id= [...cartItem,pID];//hard copying the cart array into id array as first asgument 
-            setCartItem(id); // now seting cartItem with id array that have all recent IDs
-            // setCartCookie('cart',id, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });  
-            // console.log(cartCookie.cart);
-        } 
-    }
+//         // console.log(pID);
+//         if(cartItem === {}){//if cart is empty array then set id into it
+//             setCartItem(pID);
+//             // setCartCookie('cart',pID, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });  
+//             // console.log(cartCookie);
+//  //NOTE: must initialize cartItem as array so then we can use ...cartItem else if it is object then error of cartItem is not iterable occur
+//         }else{   
+//             id= [...cartItem,pID];//hard copying the cart array into id array as first asgument 
+//             setCartItem(id); // now seting cartItem with id array that have all recent IDs
+//             // setCartCookie('cart',id, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });  
+//             // console.log(cartCookie.cart);
+//         } 
+//     }
 
     return(       
                 <div className="card product_item" >
@@ -54,11 +54,11 @@ function CardProducts (props){
                             <div  className="hover ">
                                <div style={{display:'flex',}} className="justify-content-center">
                                 <div style={{ display:'inline'}}>
-                                    <Link style={{textDecoration:'none'}} onClick={()=>addToCartHandler(props.id)} ><i style={{color:'blue'}} className="zmdi zmdi-plus icon"></i></Link>
+                                   <i onClick={()=>props.checkLogin("addToCart",props.id)} style={{color:'blue'}} className="zmdi zmdi-plus icon"></i>
                                 </div>
-                                <div style={{marginLeft:'10px', display:'inline'}}>
-                                 <Link style={{textDecoration:'none'}} to={{pathname:'/shippingPage', state:`${props.id}`}} >
-                                     <i style={{color:'blue',textDecoration:'none'}} className="zmdi zmdi-shopping-cart icon"></i></Link>
+                                <div style={{marginLeft:'10px', display:'inline'}} onClick={()=>props.checkLogin}>
+                                 
+                                     <i onClick={()=>props.checkLogin("shippingPage",props.id)} style={{color:'blue',textDecoration:'none'}} className="zmdi zmdi-shopping-cart icon"></i>
                                 </div>
                                 </div>
                             </div>

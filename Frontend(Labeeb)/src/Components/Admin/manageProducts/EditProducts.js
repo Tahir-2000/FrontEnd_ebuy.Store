@@ -200,7 +200,7 @@ function EditProducts(){
 			</div>
 			</div>
 		:
-			history.push({pathname:'/Home'})
+			history.push({pathname:'/'})
 				}
 			</>
 		:

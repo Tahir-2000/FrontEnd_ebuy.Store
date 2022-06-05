@@ -124,7 +124,32 @@ function MyNavbar(){
                            
                          
                          </ul>
-                     
+                         <ul className="navbar-nav  " style={{marginLeft:'10px ',padding:'0px', marginTop:'0px',marginRight:'17px '}} >
+                         {
+                                cookie.jwt? 
+                                null 
+                                :
+                                <>
+                                 <li className="nav-item">
+                                  
+                                  <Link className="nav-link " to="/signIn" >
+                                  <i className="fa fa-sign-in"></i>
+                                      SignIn
+                                  </Link>
+                                </li>
+                                <li className="nav-item">
+                                    
+                                    <Link className="nav-link " to="/signUp" >
+                                    <i class="fa fa-user-plus"></i>
+                                        SignUp
+                                    </Link>
+                                </li>
+                                </>
+                               
+                                
+                              }
+                           
+                          </ul>
                            <ul className="navbar-nav  " style={{marginLeft:'10px ',padding:'0px', marginTop:'0px',marginRight:'17px '}} >
                              <li className="nav-item">
                                  <Link className="nav-link "  onClick={useSignOut}>
@@ -157,7 +182,7 @@ function MyNavbar(){
                       
                           <ul style={{marginLeft:'15px'}} className="navbar-nav mr-auto">
                             <li className="nav-item ">
-                              <Link to="/Home" className="nav-link" >
+                              <Link to="/" className="nav-link" >
                                   <i class="fa fa-home"></i>
                                 <span className="sr-only">(current)</span>
                                 Home
@@ -171,7 +196,7 @@ function MyNavbar(){
                                    Cart
                               </Link>
                             </li>
-                           
+                            
                           </ul>
  
                             <ul className="navbar-nav rightSide  " style={{marginLeft:'15px ',marginRight:'20px ',padding:'0px', marginTop:'0px'}} >
@@ -186,7 +211,13 @@ function MyNavbar(){
                                         <Link className="dropdown-item " to="/ChangeUserName">Change Email </Link>
                                     </div>
                               </li>
-
+                              <li className="nav-item">
+                                  
+                                  <Link className="nav-link " to="/signIn" >
+                                  <i className="fa fa-sign-in"></i>
+                                      SignIn
+                                  </Link>
+                              </li>
                               <li className="nav-item">
                                   
                                   <Link className="nav-link "  onClick={useSignOut}>

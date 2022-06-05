@@ -12,7 +12,7 @@ function Signin(){
 return(
 <>
 {cookie.jwt?
-history.push({pathname:'/Home'})
+history.push({pathname:'/'})
 :
 <div className="text-center" style={{padding:'50px' }} >
 	<div className="logo" style={{color:'#F57224'}}>Login</div>

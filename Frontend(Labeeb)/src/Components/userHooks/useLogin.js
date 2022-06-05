@@ -6,9 +6,9 @@ import { useHistory } from "react-router-dom";
 import {UserContext} from '../userContext/UserContext'
 
 
-/*  cookies.set('jwt',res.data.jwt) will set or making cookie by putting token value 'which is coming from API's object data' into our custon made and named jwt */
+//  cookies.set('jwt',res.data.jwt) will set or making cookie by putting token value 'which is coming from API's object data' into our custon made and named jwt 
 function useLogin(){
-    
+    const [userName, setUserName] = useCookies('userCookie');  
     const history = useHistory();
     const [userLoggedIn,setUserLoggedIn] = useContext(UserContext)
     const [cookie, setCookie] = useCookies(['jwt']);        
@@ -24,13 +24,20 @@ function useLogin(){
                 email: e.target.email.value,
                 password: e.target.password.value
             });
-                setCookie('jwt',res.data.jwt, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });                 
-                setUserLoggedIn(res.data.data.user)
-                console.log('hey',res.data.data.user)
+                
+               
+                           
+                
+                console.log('hey',res.data.data.user.name)
                 if(res.data && res.data.jwt && res.data.status === "success" ){
+                    setUserLoggedIn(res.data.data.user)
+                    setCookie('jwt',res.data.jwt, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });      
                     if(res.data.data.user.role === 'user'){
-                        return history.push("/Home");
+                        setUserName('userCookie',res.data.data.user.name, { path:'/' , expires : new Date(Date.now()+(1000*60*60*24*7)) });   
+                        location.reload();
+                        return history.push("/");
                     }else if(res.data.data.user.role === 'admin'){
+                        location.reload();
                         return history.push("/Orders");
                     }
                 } 

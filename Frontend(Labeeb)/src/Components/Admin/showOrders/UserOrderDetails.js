@@ -234,7 +234,7 @@ const cartProductsDisplay = products.map(item=>{
              
         </div>
           	:
-            history.push({pathname:'/Home'})
+            history.push({pathname:'/'})
                             }
             </>
   :

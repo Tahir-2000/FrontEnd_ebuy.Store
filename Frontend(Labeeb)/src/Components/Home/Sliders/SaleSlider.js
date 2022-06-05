@@ -1,13 +1,13 @@
 import  "./../cardProducts.css";
 import 'mdb-ui-kit';
-import React,{useEffect,useState} from "react";
+import React,{useEffect,useState,useContext} from "react";
 import CardProductsJSX from './../cardProductsJSX';
 import Axios from "axios";
 import {useCookies} from "react-cookie";
 import '../line.css';
 import  "./saleSlider.css";
 
-function SaleSlider(){
+function SaleSlider(props){
     const [cookie] = useCookies(['jwt']);
    const [products,setProducts] =useState([])
     useEffect(() => {
@@ -16,12 +16,7 @@ function SaleSlider(){
     
     const getSaleProducts= async()=>{
         try{
-        const res =  await Axios.post('http://localhost:3000/api/v1/products/getSaleProducts ',{ }, {
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${cookie.jwt}`        
-            }});
+        const res =  await Axios.post('http://localhost:3000/api/v1/products/getSaleProducts ');
         
         console.log(res.data.product)
       setProducts(res.data.product)
@@ -37,7 +32,7 @@ function SaleSlider(){
         count = count +1;
         if(count < 4 ){// making condition so only first 3 products will be rendered by CardProductsJSX and other will be skipped
             return <div className="col-4 saleCardStyle" style={{marginLeft:'0px',paddingRight:'10%'}}>
-             <CardProductsJSX  id={item._id} url={item.pImagePath} title={item.pTitle} price={item.pPrice} oldPrice={item.pOldPrice}  description={item.pDescription} />
+             <CardProductsJSX checkLogin={checkLoginfunc} id={item._id} url={item.pImagePath} title={item.pTitle} price={item.pPrice} oldPrice={item.pOldPrice}  description={item.pDescription} />
         </div>
         }else {
             return;
@@ -51,7 +46,7 @@ function SaleSlider(){
         count = count +1;
         if(count > 3 && count < 7 ){ // making condition so only first 3 will be skipped and next 3 products will be rendered by CardProductsJSX
             return <div className="col-4 saleCardStyle "style={{marginLeft:'0px',paddingRight:'10%'}}>
-             <CardProductsJSX  id={item._id} url={item.pImagePath} title={item.pTitle} price={item.pPrice} oldPrice={item.pOldPrice}  description={item.pDescription} />
+             <CardProductsJSX   checkLogin={checkLoginfunc} id={item._id} url={item.pImagePath} title={item.pTitle} price={item.pPrice} oldPrice={item.pOldPrice}  description={item.pDescription} />
         </div>
         }else {
             return;
@@ -72,6 +67,16 @@ function SaleSlider(){
             return;
         }});
    }
+   // following code is for buynow and addtocart buttons with check of user login
+   function checkLoginfunc(pageName , id){    
+    if(pageName == 'addToCart'){
+      props.checkLogin("addToCart",id);
+    }else if(pageName == 'shippingPage'){
+      props.checkLogin("shippingPage",id);
+    }
+  }
+
+
    let itemsForth;
    if(totalProducts > 9){
     itemsForth= products.map(item=>{
@@ -81,13 +86,15 @@ function SaleSlider(){
         count = count +1;
         if(count > 9 && count < 13 ){ // making condition so only first 3 will be skipped and next 3 products will be rendered by CardProductsJSX
             return <div className="col-4 saleCardStyle " style={{marginLeft:'0px',paddingRight:'10%'}}>
-             <CardProductsJSX id={item._id} url={item.pImagePath} title={item.pTitle} price={item.pPrice}  oldPrice={item.pOldPrice} description={item.pDescription} />
+             <CardProductsJSX checkLogin={checkLoginfunc} id={item._id} url={item.pImagePath} title={item.pTitle} price={item.pPrice}  oldPrice={item.pOldPrice} description={item.pDescription} />
         </div>
         }else {
             return;
         }});
    }
 
+
+    
 
  return(
   <div>

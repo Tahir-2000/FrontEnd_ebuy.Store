@@ -50,7 +50,7 @@ useEffect(() => {
          </div>
          </div>
          	:
-             history.push({pathname:'/Home'})
+             history.push({pathname:'/'})
                              }
              </>
    :

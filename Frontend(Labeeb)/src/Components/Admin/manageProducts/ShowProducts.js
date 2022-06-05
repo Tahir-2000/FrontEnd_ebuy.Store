@@ -125,7 +125,7 @@ function ManageProducts (){
        
          </div>   
       	:
-          history.push({pathname:'/Home'})
+          history.push({pathname:'/'})
                           }
           </>
 	:
