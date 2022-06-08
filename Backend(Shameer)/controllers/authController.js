@@ -143,22 +143,6 @@ exports.forgetPassword = catchAsync(async(req, res, next) => {
     }
 });
 
-exports.signout = catchAsync(async(req, res, next) => {
-
-
-    try {
-
-        console.log('successfully loged out')
-        res.status(200).json({
-            status: 'success',
-            message: 'successfully loged oput'
-        })
-    } catch (err) {
-        console.log(err)
-    }
-
-})
-
 exports.setAddress = catchAsync(async(req, res, next) => {
     let Address = {
         name: req.body.name,
