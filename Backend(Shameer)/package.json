@@ -1,5 +1,5 @@
 {
-  "name": "super-store_backend",
+  "name": "eBuy.store_backend",
   "version": "1.0.0",
   "description": "Backend for our project",
   "main": "app.js",
