@@ -12,8 +12,6 @@ router.post('/changePassword', authController.changePassword);
 
 router.patch('/changeEmail',authController.protect, authController.changeEmail);
 
-router.get('/signout', authController.protect );
-
 router.post('/setAddress',authController.protect, authController.setAddress);
 
 router.post('/getUser',authController.protect, authController.getUser);
