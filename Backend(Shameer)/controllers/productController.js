@@ -12,7 +12,7 @@ sendResponce = (res, product, statusCode) => {
 
 exports.addProduct = catchAsync(async(req, res, next) => {
 
-    let { pTitle, pCetegory, pPrice, pImagePath, pDescription, pStock, pEdible, pOnSale, pOldPrice } = req.body;
+    let { pTitle, pCetegory, pPrice, pImagePath, pDescription, pStock, pOnSale, pOldPrice } = req.body;
     if (pOldPrice === '' || pOldPrice === null) {
         pOldPrice = ' '
     }
@@ -27,7 +27,6 @@ exports.addProduct = catchAsync(async(req, res, next) => {
         pImagePath: pImagePath,
         pDescription: pDescription,
         pStock: pStock,
-        pEdible: pEdible,
         pOnSale: pOnSale,
         pOldPrice: pOldPrice
     });
