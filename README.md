@@ -17,7 +17,7 @@ You will have to restart any currently-opened command prompts *Visual Studio Cod
 - If system environmental variables are not automatically set after node installation than set it by own(must check auto path option while node installation).
 
 **For Back-End Server:**
-  -  Now open Backend(Shameer) folder in your IDE and open its terminal.
+  -  Now open Backend folder in your IDE and open its terminal.
   -  Run the following command in the terminal to install all required packages.
   -  **npm install**
   -  Now run the following command in the terminal to run the application
@@ -26,7 +26,7 @@ You will have to restart any currently-opened command prompts *Visual Studio Cod
 <----------------Back-End is running on available local port -------------->
 
 **For front-End Server:**
-  - Now open Frontend(Labeeb) folder in your IDE and open its terminal.
+  - Now open Frontend folder in your IDE and open its terminal.
   - Run the following command in the terminal to install all required packages.
   - **npm install**
   - Now run the following command in the terminal to run the application
